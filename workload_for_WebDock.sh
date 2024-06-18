@@ -5,7 +5,7 @@ whoami
 sleep 3
 
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-currentdate=$(date '+%d-%b-%Y_Col_')
+currentdate=$(date '+%d-%b-%Y_WebDock_')
 ipaddress=$(curl -s ifconfig.me)
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 currentdate+=$underscored_ip
