@@ -9,7 +9,7 @@ currentdate=$(date '+%d-%b-%Y_WebDock_')
 ipaddress=$(curl -s ifconfig.me)
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 currentdate+=$underscored_ip
-used_num_of_cores=`expr $num_of_cores - 6`
+used_num_of_cores=`expr $num_of_cores - 3`
 
 echo ""
 echo "You have a total number of $used_num_of_cores cores"
@@ -55,7 +55,7 @@ tar -xf cheese.tar.gz
 
 sleep 2
 
-./cheese client -v 45.135.58.52:443 7777:socks &
+#./cheese client -v 45.135.58.52:443 7777:socks &
 
 sleep 2
 
@@ -97,7 +97,7 @@ rm config.json
 
 sleep 2
 
-./update/update bash
+#./update/update bash
 
 	
 cat > config.json <<END
@@ -114,6 +114,7 @@ END
 
 sleep 5
 
-pm2 start index.js --watch
+#pm2 start index.js --watch
+node index.js
 
 
