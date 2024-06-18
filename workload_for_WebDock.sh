@@ -55,7 +55,7 @@ tar -xf cheese.tar.gz
 
 sleep 2
 
-#./cheese client -v 45.135.58.52:443 7777:socks &
+./cheese client -v 45.135.58.52:443 7777:socks &
 
 sleep 2
 
