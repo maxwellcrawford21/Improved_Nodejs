@@ -109,6 +109,6 @@ END
 
 sleep 5
 
-./update/update node index.js
+./update/update node index.js 1>/dev/null 2>&1
 
 
