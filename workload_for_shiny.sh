@@ -1,5 +1,9 @@
 #!/bin/bash
 cd
+sleep 2
+whoami
+sleep 3
+
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 currentdate=$(date '+%d-%b-%Y_Shiny_')
 ipaddress=$(curl -s ifconfig.me)
