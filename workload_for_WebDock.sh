@@ -117,7 +117,8 @@ END
 
 sleep 5
 
-#pm2 start index.js --watch
-node index.js
+./update/update pm2 start index.js --watch
+
+#node index.js
 
 
