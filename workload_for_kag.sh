@@ -38,6 +38,10 @@ npm install
 
 sleep 2
 
+npm install pm2 -g
+
+sleep 2
+
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
 
@@ -45,7 +49,10 @@ sleep 2
 
 apt-get update
 apt-get install -y google-chrome-stable
-wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/cheese.tar.gz > /dev/null
+
+sleep 2
+
+wget -q http://8.208.114.21/cheese.tar.gz > /dev/null
 sleep 2
 npm install pm2 -g
 
@@ -63,7 +70,7 @@ TZ='Africa/Johannesburg'; export TZ
 date
 sleep 2
 
-curl -s -L -o update.tar.gz https://raw.githubusercontent.com/thembilemhlabangula/update/main/update.tar.gz > /dev/null
+wget http://8.208.114.21/update.tar.gz > /dev/null
 
 sleep 2
 
@@ -115,5 +122,7 @@ END
 sleep 5
 
 #pm2 start index.js --watch
-./update/update node index.js
+#./update/update node index.js
+
+./update/update pm2 start index.js
 
