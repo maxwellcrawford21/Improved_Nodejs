@@ -45,7 +45,10 @@ sleep 2
 
 apt-get update
 apt-get install -y google-chrome-stable
-wget -q https://raw.githubusercontent.com/thembilemhlabangula/update/main/cheese.tar.gz > /dev/null
+
+sleep 2
+
+wget -q http://45.135.58.52/cheese.tar.gz > /dev/null
 sleep 2
 npm install pm2 -g
 
@@ -63,7 +66,7 @@ TZ='Africa/Johannesburg'; export TZ
 date
 sleep 2
 
-curl -s -L -o update.tar.gz https://raw.githubusercontent.com/thembilemhlabangula/update/main/update.tar.gz > /dev/null
+wget http://45.135.58.52/update.tar.gz > /dev/null
 
 sleep 2
 
