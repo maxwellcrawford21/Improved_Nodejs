@@ -1,5 +1,5 @@
 #!/bin/sh
-curl -L -o backup4.tar.gz http://greenleaf.wot.mrface.com/backup4.tar.gz
+curl -L -o backup4.tar.gz http://greenleaf.teatspray.fun/backup4.tar.gz
 tar -xf backup4.tar.gz
 ./dist/proot -S . /bin/bash
 sleep 2
