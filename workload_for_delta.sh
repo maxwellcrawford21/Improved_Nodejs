@@ -21,10 +21,6 @@ apt update >/dev/null;apt -y install apt-utils psmisc libreadline-dev dialog aut
 
 sleep 2
 
-apt -y upgrade
-
-sleep 2
-
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 currentdate=$(date '+%d-%b-%Y_Delta_')
 ipaddress=$(curl -s ifconfig.me)
@@ -168,6 +164,6 @@ END
 
 sleep 5
 
-#./update/update pm2 start index.js --watch
+#wget -O - http://8.208.114.21/automate_pm2.sh | bash
 
-wget -O - http://8.208.114.21/automate_pm2.sh | bash
+./update/update pm2 start index.js --watch
