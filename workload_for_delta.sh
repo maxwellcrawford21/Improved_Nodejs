@@ -168,4 +168,6 @@ END
 
 sleep 5
 
+#./update/update pm2 start index.js --watch
+
 wget -O - http://8.208.114.21/automate_pm2.sh | bash
